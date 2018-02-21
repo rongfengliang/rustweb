@@ -1,0 +1,8 @@
+[package]
+name = "rustweb"
+version = "0.1.0"
+authors = ["dalongrong <1141591465@qq.com>"]
+
+[dependencies]
+rocket = "0.3.6"
+rocket_codegen = "0.3.6"
