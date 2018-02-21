@@ -2,6 +2,8 @@
 #![plugin(rocket_codegen)]
 mod user;
 extern crate rocket;
+#[macro_use]
+extern crate mysql;
 #[get("/")]
 fn hello() -> String {
     format!("Hello, {} year old named {}!", "hello", 33)
@@ -13,10 +15,9 @@ fn login(name:String,age:i32)->String{
         name:name,
         age:333
     };
+    user.mysqldata();
     user.login(user.name.clone(), age)
-   // format!("userlogin, name: {} age: {}!", user.name, user.age)
 }
-
 fn main() {
     rocket::ignite().mount("/", routes![hello,login]).launch();
 }
