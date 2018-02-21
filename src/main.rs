@@ -13,7 +13,8 @@ fn login(name:String,age:i32)->String{
         name:name,
         age:333
     };
-    format!("userlogin, name: {} age: {}!", user.name, user.age)
+    user.login(user.name.clone(), age)
+   // format!("userlogin, name: {} age: {}!", user.name, user.age)
 }
 
 fn main() {
